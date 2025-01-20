@@ -1,0 +1,358 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9fafb;
+        }
+        header {
+            background: #4c6ef5;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 1.5rem;
+        }
+        main {
+            margin: 2rem auto;
+            width: 90%;
+            max-width: 1200px;
+            background: white;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .content-container {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+        }
+        .preview {
+            flex: 1;
+            text-align: center;
+            background: #f1f3f5;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1rem;
+            overflow: hidden;
+        }
+        .preview img {
+            max-width: 100%;
+            max-height: 600px; /* Increased max height for better image visibility */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .preview iframe {
+            width: 100%; /* Full width for the PDF preview */
+            height: 700px; /* Increased height for better readability */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .results {
+            flex: 2;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1rem;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background: #fff;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-bottom: 1rem;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 0.5rem;
+            background: #e7f5ff;
+            padding: 0.5rem;
+            border-radius: 5px;
+        }
+        .back-button {
+            text-align: center;
+        }
+        .back-button a {
+            text-decoration: none;
+            color: #4c6ef5;
+            font-weight: bold;
+            border: 1px solid #4c6ef5;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+        .back-button a:hover {
+            background: #4c6ef5;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>Document Summary Assistant</header>
+    <main>
+        <div class="content-container">
+           
+            <div class="preview">
+                <h2>Document Preview</h2>
+                {% if file_type == 'image' %}
+                <img src="{{ file_url }}" alt="Document Image Preview">
+                {% elif file_type == 'pdf' %}
+                <iframe src="{{ file_url }}" frameborder="0"></iframe>
+                {% else %}
+                <p>No preview available for this file type.</p>
+                {% endif %}
+            </div>
+
+            <div class="results">
+                <h2>Original Text</h2>
+                <pre>{{ text }}</pre>
+                <h2>Summary</h2>
+                <pre>{{ summary }}</pre>
+                <h2>Key Points</h2>
+                <ul>
+                    {% for point in key_points %}
+                    <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="back-button">
+            <a href="/">Back to Upload</a>
+        </div>
+    </main>
+</body>
+</html>
+
+
+ -->
+
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0fdf4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: #38a169; /* Green header */
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 1.5rem;
+        }
+        header img {
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        main {
+            flex: 1;
+            margin: 2rem auto;
+            width: 90%;
+            max-width: 1200px;
+            background: white;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .content-container {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+        }
+        .preview {
+            flex: 1;
+            text-align: center;
+            background: #f1f3f5;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1rem;
+            overflow: hidden;
+        }
+        .preview img {
+            max-width: 100%;
+            max-height: 600px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .preview iframe {
+            width: 100%;
+            height: 700px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .results {
+            flex: 2;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1rem;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background: #fff;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-bottom: 1rem;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 0.5rem;
+            background: #e7f5e9;
+            padding: 0.5rem;
+            border-radius: 5px;
+        }
+        .back-button {
+            text-align: center;
+        }
+        .back-button a {
+            text-decoration: none;
+            color: #38a169;
+            font-weight: bold;
+            border: 1px solid #38a169;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+        .back-button a:hover {
+            background: #38a169;
+            color: white;
+        }
+        footer {
+            background: #38a169;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://3024849.fs1.hubspotusercontent-na1.net/hubfs/3024849/Kartik/Unthinkable%20Horizontal.png" alt="Unthinkable Solutions Logo">
+        <h1>Document Summary Assistant</h1>
+    </header>
+    <main>
+        <div class="content-container">
+            <div class="preview">
+                <h2>Document Preview</h2>
+                {% if file_type == 'image' %}
+                <img src="{{ file_url }}" alt="Document Image Preview">
+                {% elif file_type == 'pdf' %}
+                <iframe src="{{ file_url }}" frameborder="0"></iframe>
+                {% else %}
+                <p>No preview available for this file type.</p>
+                {% endif %}
+            </div>
+            <div class="results">
+                <h2>Original Text</h2>
+                <pre>{{ text }}</pre>
+                <h2>Summary</h2>
+                <pre>{{ summary }}</pre>
+                <h2>Key Points</h2>
+                <ul>
+                    {% for point in key_points %}
+                    <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="back-button">
+            <a href="/">Back to Upload</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 NileshSvt | Contact: <a href="tel:+918948242642">8948242642</a> | <a href="mailto:nileshsrivastava8948@gmail.com">nileshsrivastava8948@gmail.com</a></p>
+    </footer>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary Results</title>
+    <!-- <link rel="stylesheet" href="css/result.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+
+</head>
+<body>
+    <header>
+        <img src="https://3024849.fs1.hubspotusercontent-na1.net/hubfs/3024849/Kartik/Unthinkable%20Horizontal.png" alt="Unthinkable Solutions Logo">
+        <!-- <h1>Document Summary Assistant</h1> -->
+        <h1><span style="margin-right: 10px;">🔍</span>Document Summary Assistant</h1>
+    </header>
+    <main>
+        <div class="content-container">
+            <div class="preview">
+                <h2>Document Preview</h2>
+                {% if file_type == 'image' %}
+                <img src="{{ file_url }}" alt="Document Image Preview">
+                {% elif file_type == 'pdf' %}
+                <iframe src="{{ file_url }}" frameborder="0"></iframe>
+                {% else %}
+                <p>No preview available for this file type.</p>
+                {% endif %}
+            </div>
+            <div class="results">
+                <h2>Original Text</h2>
+                <pre>{{ text }}</pre>
+                <h2>Summary</h2>
+                <pre>{{ summary }}</pre>
+                <h2>Key Points</h2>
+                <ul>
+                    {% for point in key_points %}
+                    <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="back-button">
+            <a href="/">Back to Upload</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 NileshSvt</p>
+        <p>Made with ❤️ by Nilesh Srivastava</p>
+        <!-- <p>Contact:</p>
+        <p><a href="tel:+918948242642">8948242642</a></p>
+        <p><a href="mailto:nileshsrivastava8948@gmail.com">nileshsrivastava8948@gmail.com</a></p> -->
+    </footer>
+</body>
+</html>

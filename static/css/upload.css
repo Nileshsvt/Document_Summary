@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #d8f3dc; /* Light green background */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header {
+    background: white; /* Header background set to white */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* justify-content: center; */
+    padding: 2rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+header img {
+    height: 30px; /* Reduced logo size */
+}
+header h1 {
+    font-size: 2.5rem; /* Increased heading size */
+    color: #333;
+    margin: 0;
+}
+main {
+    flex: 1;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 600px;
+    background: white;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+h1 {
+    color: #38a169;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+input[type="file"] {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button {
+    background: #38a169;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+button:hover {
+    background: #2f855a;
+}
+#spinner-container {
+    margin: 1rem auto;
+    text-align: center;
+    display: none;
+}
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #38a169;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+p.spinner-text {
+    color: #555;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+#preview-container {
+    margin-top: 2rem;
+    text-align: center;
+    display: none;
+}
+#preview-container img {
+    max-width: 85%;
+    max-height: 350px;
+    margin: 1rem auto;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#preview-container iframe {
+    width: 98%;
+    height: 450px;
+    margin: 1rem auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+footer {
+    background: #252222; /* Footer background set to light black */
+    color: white; /* Footer text color set to white */
+    text-align: center;
+    padding: 2rem 0; /* Increased height */
+    font-size: 0.9rem;
+    margin-top: auto; /* Push footer to bottom */
+}
+footer p {
+    margin: 0.5rem 0; /* Add spacing between lines */
+}
+footer a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Ensure white text */
+}
+footer a:hover {
+    text-decoration: none; /* No underline on hover */
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

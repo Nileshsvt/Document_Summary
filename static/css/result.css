@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #d8f3dc; /* Light green background */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header {
+    background: white; /* Header background set to white */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+header img {
+    height: 30px; /* Reduced logo size */
+}
+header h1 {
+    font-size: 2.5rem; /* Increased heading size */
+    color: #333;
+    margin: 0;
+}
+main {
+    flex: 1;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 1200px;
+    background: white; /* Main background set to white */
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.content-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+.preview {
+    flex: 1;
+    text-align: center;
+    background: #f1f3f5;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    overflow: hidden;
+}
+.preview img {
+    max-width: 100%;
+    max-height: 600px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.preview iframe {
+    width: 100%;
+    height: 700px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.results {
+    flex: 2;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+}
+h1, h2 {
+    color: #333;
+}
+pre {
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-bottom: 1rem;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+ul li {
+    margin-bottom: 0.5rem;
+    background: #e7f5e9;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+.back-button {
+    text-align: center;
+    margin-top: 1rem; /* Slightly moved down */
+}
+.back-button a {
+    text-decoration: none;
+    color: #38a169;
+    font-weight: bold;
+    border: 1px solid #38a169;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+.back-button a:hover {
+    background: #38a169;
+    color: white;
+}
+footer {
+    background: #252222; /* Footer background set to light black */
+    color: white; /* Footer text color set to white */
+    text-align: center;
+    padding: 2rem 0; /* Increased height */
+    font-size: 0.9rem;
+    margin-top: auto; /* Push footer to bottom */
+}
+footer p {
+    margin: 0.5rem 0; /* Add spacing between lines */
+}
+footer a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Ensure white text */
+}
+footer a:hover {
+    text-decoration: none; /* No underline on hover */
+}

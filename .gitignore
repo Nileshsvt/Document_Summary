@@ -1,0 +1,20 @@
+# Python-related
+__pycache__/
+*.pyc
+*.pyo
+.env/
+env/
+venv/
+*.sqlite3
+*.db
+
+# VS Code-related
+.vscode/
+*.code-workspace
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Static uploads
+static/uploads/
