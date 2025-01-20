@@ -1,6 +1,8 @@
 import pytesseract
 from pdf2image import convert_from_path
 
+pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
+
 def extract_text_from_image(image_path):
     """Extracts text from an image file."""
     try:
